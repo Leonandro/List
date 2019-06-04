@@ -122,6 +122,75 @@ namespace sc
                 }
 
         };
+
+        /// Classe que implementa um iterator constante para a classe list.
+        class const_iterator  
+        {
+            public:
+                    typedef std::ptrdiff_t difference_type;
+                    typedef node <T> value_type;
+                    typedef node <T> * pointer;
+                    typedef node <T> & reference;
+                    typedef std::bidirectional_iterator_tag iterator_category;
+            
+            private:
+                node <T> *ptr;
+
+            public:
+                const_iterator(node <T> *pt = nullptr) : ptr{pt}
+                { /* empty */
+
+                }
+
+                const_iterator &operator=(const const_iterator &rhs)
+                {
+                    this->ptr = rhs.ptr;
+                    return *this;
+                }
+
+                bool operator==(const const_iterator &it) const
+                {
+                    return this->ptr == it.ptr;
+                }
+
+                bool operator!=(const const_iterator &it) const
+                {
+                    return this->ptr != it.ptr;
+                }
+
+
+                T operator*(void) const
+                {
+                    return ptr->data;
+                }
+
+                const_iterator operator++(void)
+                {
+                    ptr = ptr->next;
+                    return const_iterator(ptr);
+                }
+
+                const_iterator operator++(int) 
+                {
+                    const_iterator temp(ptr); 
+                    ptr = ptr->next;
+                    return temp;
+                }
+
+                const_iterator operator--(void)
+                {
+                    ptr = ptr->prev;
+                    return const_iterator(ptr);
+                }
+
+                const_iterator operator--(int) 
+                {
+                    const_iterator temp(ptr); 
+                    ptr = ptr->prev;
+                    return temp;
+                }
+
+        };
         
         //=== private area
         private:
