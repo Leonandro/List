@@ -1,11 +1,11 @@
-#Author
+# Author
 Leonandro Valério Barbosa Gurgel
 
-#Intro
+# Intro
 In this project **List** i implement a punch of functions of the std::list, with a double linked list, you will have below a little instructions about how to compile and run the tests.
 
 
-#compiling
+# Compiling
 
 1. `cd llist`: enters into the main project directory.
 
@@ -18,5 +18,5 @@ In this project **List** i implement a punch of functions of the std::list, with
 5. `make`: triggers the compiling process and create the run_tests target.
 
 
-#Tests
+# Tests
 After compiling process you will have an executable `run_tests`, this target have a lot of tests to checking how you class works. For run the tests, you just have to execute the `run_tests` like any executable, with the command `./run_tests`. remenber, you target has been buildt in the build folder, execute in this directory.
